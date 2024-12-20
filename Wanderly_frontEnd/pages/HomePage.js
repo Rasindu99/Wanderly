@@ -18,14 +18,14 @@ export default function HomePage({ username }) {
       .then((response) => {
         console.log(response?.data)
         if (response.data && Array.isArray(response.data)) {
-          const sportsData = response?.data?.splice(0,11)?.map((sport) => ({
-            id: sport.id,
-            title: sport.country,
-            description: sport.description,
-            image: sport.image,
-            status: sport.language,
+          const travelData = response?.data?.splice(0,11)?.map((item) => ({
+            id: item.id,
+            title: item.country,
+            description: item.description,
+            image: item.image,
+            status: item.language,
           }));
-          setItems(sportsData);
+          setItems(travelData);
         } else {
           console.error('No sports data available');
         }
